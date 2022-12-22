@@ -4,7 +4,7 @@ import shlex
 import time
 
 # Create an output file
-filename = "locations.txt"
+filename = "location.txt"
 cmd = f"nc -lnvp 5000 >> {filename}"
 clear = "clear"
 
