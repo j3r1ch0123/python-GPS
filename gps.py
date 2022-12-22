@@ -1,4 +1,4 @@
-#!/bin/python3
+#!/bin/python3.10
 from urllib.request import urlopen
 import os
 import json
