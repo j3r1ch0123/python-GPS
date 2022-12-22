@@ -5,10 +5,6 @@ import json
 import socket
 import time
 
-# Create a directory to keep things neat
-os.mkdir("../.gps")
-os.chdir("../.gps")
-
 # Keep the program running indefinitely
 while True:
 
