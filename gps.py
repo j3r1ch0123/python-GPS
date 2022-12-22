@@ -9,6 +9,7 @@ while True:
 
     RHOSTS = "127.0.0.1" # Change this
     RPORT = 5000 # Change this
+    separator = " , "
 
 # Link to the url that will give you your coordinates
     url = "https://ipinfo.io/json"
@@ -18,7 +19,7 @@ while True:
 # Get latitude and longitude
     lat = data['loc'].split(",")[0]
     lon = data['loc'].split(",")[1]
-    location = lat, lon
+    location = lat, separator, lon
     coordinates = "".join(location)
     print(coordinates)
 
