@@ -4,7 +4,6 @@ import json
 import socket
 import time
 
-
 # Keep the program running indefinitely
 while True:
 
