@@ -1,12 +1,9 @@
 #!/bin/python3.10
 from urllib.request import urlopen
-from datetime import datetime
 import json
 import socket
 import time
 
-# Get the time
-current_Time = datetime.now()
 
 # Keep the program running indefinitely
 while True:
@@ -30,7 +27,7 @@ while True:
 # Create a file to store it all
     filename = "location.txt"
     with open(filename, "w") as thefile:
-        thefile.write("location : " + current_Time + coordinates + "\n")
+        thefile.write("location : " + coordinates + "\n")
 
 # Send the file to the remote host
     with open(filename, "rb") as sendFile:
