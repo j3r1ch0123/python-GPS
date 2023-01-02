@@ -18,9 +18,6 @@ while True:
             f.write(l)
             l = sc.recv(1024)
         f.close()
-        with open('location.txt', 'r') as thefile:
-            contents = thefile.read()
-            print(contents)
 
     sc.close()
 
