@@ -3,13 +3,14 @@ import socket
 import sys
 
 s = socket.socket()
-s.bind(("127.0.0.1",9000)) #Change these
+s.bind(("139.162.117.110",9000)) #Change these
 print("Listening...")
 s.listen(10)
+i=1
 
 while True:
     sc, address = s.accept()
-    print("Location received from " + address)
+    print(address)
     f = open('location.txt','ab+') #open in binary
     l = 1
     while(l):
@@ -18,6 +19,9 @@ while True:
             f.write(l)
             l = sc.recv(1024)
         f.close()
+        with open('location.txt', 'r') as thefile:
+            contents = thefile.read()
+            print(contents)
 
     sc.close()
 
