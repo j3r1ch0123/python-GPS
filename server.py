@@ -9,7 +9,7 @@ s.listen(10)
 
 while True:
     sc, address = s.accept()
-    print(address)
+    print("Location received from " + address)
     f = open('location.txt','ab+') #open in binary
     l = 1
     while(l):
