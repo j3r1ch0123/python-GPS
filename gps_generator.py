@@ -35,7 +35,6 @@ while True:
     with open(filename, "w") as thefile:
         contents = f"Location : " + coordinates #Add new line after generating
         thefile.write(contents)
-        continue
 
     with open(filename, "rb") as sendFile:
         sendFile = sendFile.read()
