@@ -52,7 +52,7 @@ import sys
 
 s = socket.socket()
 s.bind(("{HOST}",{PORT})) #Change these
-print("Listening...")
+print("Listening on port: {PORT}...")
 s.listen(10)
 i=1
 
