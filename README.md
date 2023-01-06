@@ -5,3 +5,4 @@ All the python modules should be preinstalled.
 If not, use pip install -r requirements.txt
 
 Now comes with a payload generator to make things easier.
+Tip: The server might not pick up the location after the first send, so set the time interval low.
